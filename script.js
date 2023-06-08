@@ -32,7 +32,7 @@ function game(){
     for(let i = 0;i<5;i++){
         let s = play(getComputerChoice(),prompt());
         console.log(s);
-        if(s.length() !== 4){
+        if(s.length !== 4){
             if(s.slice(4,7) === "Win") playerScore++;
             else computerScore++;
         }
