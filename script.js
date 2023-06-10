@@ -11,6 +11,8 @@ const score = document.createElement("div");
 let playerScore = 0;
 let computerScore =0;
 score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
+text.appendChild(score);
+text.appendChild(out);
 
 
 function play(){
@@ -44,4 +46,3 @@ function play(){
 const buttons = document.querySelectorAll(".gameBtn");
 const playBtn = document.querySelector("#playBtn");
 Array.from(buttons).forEach( btn => btn.addEventListener("click" , play ) );
-playBtn.addEventListener("click",game);
