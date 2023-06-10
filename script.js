@@ -36,8 +36,8 @@ function play(){
             break;
     }
     if( playerScore === 5 || computerScore===5){
-        if(playerScore===5) out.textContent = "Player Win!";
-        else out.textContent = "Computer Win!";
+        if(playerScore===5) out.textContent += "\nPlayer Win!";
+        else out.textContent += "\nComputer Win!";
         playerScore = 0;
         computerScore = 0;
         score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
