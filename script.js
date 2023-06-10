@@ -7,45 +7,38 @@ function getComputerChoice(){
 
 const text = document.querySelector("#text");
 const out = document.createElement("div");
+const score = document.createElement("div");
+let playerScore = 0;
+let computerScore =0;
+score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
+
 
 function play(){
-    console.log(this);
     let player = this.textContent;
     let computerSelection = getComputerChoice();
     switch(player){
         case "Rock":
-            if(computerSelection === "Rock") out.textContent = "Tie!";
-            else if(computerSelection === "Paper") out.textContent = "You Lose! Paper beats Rock";
-            else out.textContent = "You Win! Rock beats Scissors";
+            if(computerSelection === "Rock"){out.textContent = "Tie!";}
+            else if(computerSelection === "Paper"){out.textContent = "You Lose! Paper beats Rock";computerScore++;}
+            else {out.textContent = "You Win! Rock beats Scissors";playerScore++;}
             break;
         case "Paper":
-            if(computerSelection === "Rock") out.textContent = "You Win! Paper beats Rock";
-            else if(computerSelection === "Paper") out.textContent = "Tie!";
-            else out.textContent = "You Lose! Scissors beats Paper"
+            if(computerSelection === "Rock") {out.textContent = "You Win! Paper beats Rock";playerScore++;}
+            else if(computerSelection === "Paper"){ out.textContent = "Tie!";}
+            else{ out.textContent = "You Lose! Scissors beats Paper";computerScore++;}
             break;
         case "Scissors":
-            if(computerSelection === "Rock") out.textContent = "You Lose! Rock beats Scissors";
-            else if(computerSelection === "Paper") out.textContent = "You Win! Scissors beats Paper";
-            else out.textContent = "Tie!"
+            if(computerSelection === "Rock") {out.textContent = "You Lose! Rock beats Scissors";computerScore++;}
+            else if(computerSelection === "Paper") {out.textContent = "You Win! Scissors beats Paper";playerScore++;}
+            else {out.textContent = "Tie!"}
             break;
     }
-}
-
-function game(){
-    let playerScore = 0;
-    let computerScore =0;
-    text.appendChild(out);
-    // for(let i = 0;i<5;i++){
-    //     let s = play(getComputerChoice(),prompt());
-    //     console.log(s);
-    //     if(s.length !== 4){
-    //         if(s.slice(4,7) === "Win") playerScore++;
-    //         else computerScore++;
-    //     }
-    // }
-    if(playerScore > computerScore) console.log("Player Win!");
-    else if(playerScore < computerScore) console.log("Computer Win!");
-    else console.log("Tie!");
+    if( playerScore === 5 || computerScore===5){
+        if(playerScore===5) out.textContent = "Player Win!";
+        else out.textContent = "Computer Win!";
+        playerScore = 0;
+        computerScore = 0;
+    }
 }
 
 const buttons = document.querySelectorAll(".gameBtn");
