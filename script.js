@@ -5,23 +5,26 @@ function getComputerChoice(){
     return "Scissors";
 }
 
+const text = document.querySelector("#text");
+const out = document.createElement("div");
+
 function play(computerSelection){
     let player = this.textContent.toLowerCase();
     switch(player){
         case "rock":
-            if(computerSelection === "Rock") return "Tie!";
-            else if(computerSelection === "Paper") return "You Lose! Paper beats Rock";
-            return "You Win! Rock beats Scissors"
+            if(computerSelection === "Rock") out.textContent = "Tie!";
+            else if(computerSelection === "Paper") out.textContent = "You Lose! Paper beats Rock";
+            else out.textContent = "You Win! Rock beats Scissors";
             break;
         case "paper":
-            if(computerSelection === "Rock") return "You Win! Paper beats Rock";
-            else if(computerSelection === "Paper") return "Tie!";
-            return "You Lose! Scissors beats Paper"
+            if(computerSelection === "Rock") out.textContent = "You Win! Paper beats Rock";
+            else if(computerSelection === "Paper") out.textContent = "Tie!";
+            else out.textContent = "You Lose! Scissors beats Paper"
             break;
         case "scissors":
-            if(computerSelection === "Rock") return "You Lose! Rock beats Scissors";
-            else if(computerSelection === "Paper") return "You Win! Scissors beats Paper";
-            return "Tie!"
+            if(computerSelection === "Rock") out.textContent = "You Lose! Rock beats Scissors";
+            else if(computerSelection === "Paper") out.textContent = "You Win! Scissors beats Paper";
+            else out.textContent = "Tie!"
             break;
     }
 }
@@ -29,6 +32,7 @@ function play(computerSelection){
 function game(){
     let playerScore = 0;
     let computerScore =0;
+    text.appendChild(out);
     // for(let i = 0;i<5;i++){
     //     let s = play(getComputerChoice(),prompt());
     //     console.log(s);
