@@ -29,14 +29,14 @@ function play(computerSelection,playerSelection){
 function game(){
     let playerScore = 0;
     let computerScore =0;
-    for(let i = 0;i<5;i++){
-        let s = play(getComputerChoice(),prompt());
-        console.log(s);
-        if(s.length !== 4){
-            if(s.slice(4,7) === "Win") playerScore++;
-            else computerScore++;
-        }
-    }
+    // for(let i = 0;i<5;i++){
+    //     let s = play(getComputerChoice(),prompt());
+    //     console.log(s);
+    //     if(s.length !== 4){
+    //         if(s.slice(4,7) === "Win") playerScore++;
+    //         else computerScore++;
+    //     }
+    // }
     if(playerScore > computerScore) console.log("Player Win!");
     else if(playerScore < computerScore) console.log("Computer Win!");
     else console.log("Tie!");
