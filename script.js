@@ -5,8 +5,8 @@ function getComputerChoice(){
     return "Scissors";
 }
 
-function play(computerSelection,playerSelection){
-    let player = playerSelection.toLowerCase();
+function play(computerSelection){
+    let player = this.textContent.toLowerCase();
     switch(player){
         case "rock":
             if(computerSelection === "Rock") return "Tie!";
@@ -41,3 +41,6 @@ function game(){
     else if(playerScore < computerScore) console.log("Computer Win!");
     else console.log("Tie!");
 }
+
+const buttons = document.querySelectorAll("button");
+Array.from(buttons).forEach( btn => btn.addEventListener("click" , play(getComputerChoice()) ) )
