@@ -6,7 +6,7 @@ function getComputerChoice(){
 }
 
 const text = document.querySelector("#text");
-const out = document.createElement("div");
+const out = document.createElement("pre");
 const score = document.createElement("div");
 let playerScore = 0;
 let computerScore =0;
