@@ -48,5 +48,7 @@ function game(){
     else console.log("Tie!");
 }
 
-const buttons = document.querySelectorAll("button");
-Array.from(buttons).forEach( btn => btn.addEventListener("click" , play ) )
+const buttons = document.querySelectorAll(".gameBtn");
+const playBtn = document.querySelector("#playBtn");
+Array.from(buttons).forEach( btn => btn.addEventListener("click" , play ) );
+playBtn.addEventListener("click",game);
