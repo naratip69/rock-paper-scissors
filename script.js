@@ -21,17 +21,17 @@ function play(){
     switch(player){
         case "Rock":
             if(computerSelection === "Rock"){out.textContent = "Tie!";}
-            else if(computerSelection === "Paper"){out.textContent = "You Lose! Paper beats Rock";computerScore++;}
-            else {out.textContent = "You Win! Rock beats Scissors";playerScore++;}
+            else if(computerSelection === "Paper"){out.textContent = "You Lose! Paper beats Rock";computerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
+            else {out.textContent = "You Win! Rock beats Scissors";playerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
             break;
         case "Paper":
-            if(computerSelection === "Rock") {out.textContent = "You Win! Paper beats Rock";playerScore++;}
+            if(computerSelection === "Rock") {out.textContent = "You Win! Paper beats Rock";playerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
             else if(computerSelection === "Paper"){ out.textContent = "Tie!";}
-            else{ out.textContent = "You Lose! Scissors beats Paper";computerScore++;}
+            else{ out.textContent = "You Lose! Scissors beats Paper";computerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
             break;
         case "Scissors":
-            if(computerSelection === "Rock") {out.textContent = "You Lose! Rock beats Scissors";computerScore++;}
-            else if(computerSelection === "Paper") {out.textContent = "You Win! Scissors beats Paper";playerScore++;}
+            if(computerSelection === "Rock") {out.textContent = "You Lose! Rock beats Scissors";computerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
+            else if(computerSelection === "Paper") {out.textContent = "You Win! Scissors beats Paper";playerScore++;score.textContent = `Player:${playerScore}  Computer:${computerScore}`;}
             else {out.textContent = "Tie!"}
             break;
     }
@@ -40,6 +40,7 @@ function play(){
         else out.textContent = "Computer Win!";
         playerScore = 0;
         computerScore = 0;
+        score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
     }
 }
 
