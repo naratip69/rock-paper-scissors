@@ -8,20 +8,22 @@ function getComputerChoice(){
 const text = document.querySelector("#text");
 const out = document.createElement("div");
 
-function play(computerSelection){
-    let player = this.textContent.toLowerCase();
+function play(){
+    console.log(this);
+    let player = this.textContent;
+    let computerSelection = getComputerChoice();
     switch(player){
-        case "rock":
+        case "Rock":
             if(computerSelection === "Rock") out.textContent = "Tie!";
             else if(computerSelection === "Paper") out.textContent = "You Lose! Paper beats Rock";
             else out.textContent = "You Win! Rock beats Scissors";
             break;
-        case "paper":
+        case "Paper":
             if(computerSelection === "Rock") out.textContent = "You Win! Paper beats Rock";
             else if(computerSelection === "Paper") out.textContent = "Tie!";
             else out.textContent = "You Lose! Scissors beats Paper"
             break;
-        case "scissors":
+        case "Scissors":
             if(computerSelection === "Rock") out.textContent = "You Lose! Rock beats Scissors";
             else if(computerSelection === "Paper") out.textContent = "You Win! Scissors beats Paper";
             else out.textContent = "Tie!"
@@ -47,4 +49,4 @@ function game(){
 }
 
 const buttons = document.querySelectorAll("button");
-Array.from(buttons).forEach( btn => btn.addEventListener("click" , play(getComputerChoice()) ) )
+Array.from(buttons).forEach( btn => btn.addEventListener("click" , play ) )
